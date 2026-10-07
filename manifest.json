@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "mrjohnnycake.network-plus",
+  "name": "Network Plus",
+  "version": "1.0.0",
+  "author": "mrjohnnycake",
+  "description": "Wi-Fi list and connection state, plus a shortcut to your network settings app",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Network Plus",
+    "description": "Wi-Fi list and connection state, plus a shortcut to your network settings app",
+    "category": "Network",
+    "allowMultiple": false,
+    "defaults": {
+      "settingsCommand": "nm-connection-editor"
+    },
+    "schema": [
+      {
+        "key": "settingsCommand",
+        "type": "string",
+        "label": "Network settings app",
+        "defaultValue": "nm-connection-editor",
+        "description": "Command run by the gear button in the panel, e.g. nm-connection-editor or omarchy-launch-or-focus-tui nmtui. Leave empty to hide the gear."
+      }
+    ]
+  },
+  "license": "MIT",
+  "omarchy": {
+    "clonedFrom": "omarchy.network"
+  }
+}
