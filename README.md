@@ -6,21 +6,29 @@ app of your choice.
 ![Network Plus dropdown open in the Omarchy bar, with the gear button next to the Wi-Fi switch](preview.png)
 
 Network Plus is a drop-in replacement for Omarchy's built-in Network bar widget.
-Everything in the built-in panel works as before. The only addition is a
-settings button in the panel header that opens a full network manager such as
-nm-connection-editor, for things the panel doesn't cover: VPNs, static IPs,
-proxies, Ethernet profiles, and so on.
+It adds a settings button in the panel header that opens a full network manager
+such as nm-connection-editor, for things the panel doesn't cover: VPNs, static
+IPs, proxies, Ethernet profiles, and so on. New enterprise Wi-Fi networks are set
+up there too, so they can be connected with certificate checking. Everything else
+in the built-in panel works as before.
 
 ## Features
 
-- **Everything from the built-in panel**: Wi-Fi list, connect, disconnect and
-  forget networks, connection stats, Wi-Fi band and DNS provider, the QR code
+- **Everything from the built-in panel** (except signing in to new enterprise
+  networks, see below): Wi-Fi list, connect, disconnect and forget networks, connection stats, Wi-Fi band and DNS provider, the QR code
   and speed test buttons, the Wi-Fi switch, and the same keyboard navigation
 - **Settings button**: a gear next to the Wi-Fi switch opens your network
   settings app and closes the panel. It's part of the header's keyboard cursor
   too, so you can reach it with the arrow keys.
 - **Configurable app**: defaults to `nm-connection-editor`. Any command works,
   including flags. Leave it empty to hide the gear.
+- **Safer enterprise Wi-Fi**: joining a new enterprise (802.1X, WPA-EAP)
+  network, the username-and-password kind used at work and on campus, opens your
+  settings app instead of a sign-in prompt in the panel. There you can set the
+  CA certificate and server domain, so your password isn't sent to a network
+  that only pretends to be the real one. Enterprise networks you've already
+  saved connect from the panel as usual. If the gear is hidden, the network's
+  row says "Set up in network settings".
 - **Drop-in replacement** for the built-in `omarchy.network` plugin. Omarchy's
   `Super + Ctrl + W` keybind keeps working unchanged.
 
